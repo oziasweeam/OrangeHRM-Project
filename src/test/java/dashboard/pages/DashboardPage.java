@@ -46,7 +46,7 @@ public class DashboardPage {
 	}
 
 	public void verifyUserName() { // Class 12 Day Time is 3:37H
-		String expected = "Paul";
+		String expected = "Welcome Test";
 		String actual = welcomeWord.getText().trim();
 		Assert.assertTrue("Word does not match", actual.contains(expected));
 
