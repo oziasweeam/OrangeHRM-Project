@@ -2,6 +2,7 @@ package dashboard.steps;
 
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,6 +16,10 @@ public class DashStepDef {
 	
 	WebDriver driver;
 	DashboardPage dashPage;
+	
+	public String LOG4J_FILE = "log4j.properties";
+	public Logger log = Logger.getLogger("DashStepDef");
+
 
 	@Given("^user go to Orange Hrm home page$")
 	public void user_go_to_Orange_Hrm_home_page() throws Throwable {
@@ -22,6 +27,8 @@ public class DashStepDef {
 		driver = new ChromeDriver();
 
 		driver.get("https://opensource-demo.orangehrmlive.com/index.php/auth/login");
+		log.info("Successfully Open Browser");
+		log.error("If Any Error");
 		driver.manage().window().maximize();
 	   
 	}
